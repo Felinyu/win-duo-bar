@@ -1,5 +1,13 @@
 # Win Duo Bar
 
+[![Windhawk](https://img.shields.io/badge/Windhawk-mod-7c3aed)](https://windhawk.net/)
+[![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-blue)](LICENSE)
+[![Platform: Windows 11](https://img.shields.io/badge/platform-Windows%2011-0078d4)](#compatibility--兼容性)
+
+Source: https://github.com/Felinyu/win-duo-bar
+
+> Status: the mod is **not in the official Windhawk catalog yet** — the submission is in review ([PR #6884](https://github.com/ramensoftware/windhawk-mods/pull/6884)). Until it is merged, install it manually as described below.
+
 <p align="center">
   <img src="screenshots/hero.png" width="360" alt="Win Duo Bar - charging state">
 </p>
@@ -70,8 +78,8 @@ parameters as the widget (scaled up for readability). 截图由 `preview/preview
 
 ## Installation / 安装
 
-> The mod is not in the official Windhawk repository yet, so install it
-> manually for now. / 目前尚未上架 Windhawk 官方仓库，先手动安装。
+> The mod is not in the official Windhawk repository yet (submission pending), so
+> install it manually for now. / 尚未上架 Windhawk 官方仓库（已提交审核），先手动安装。
 
 **English**
 
@@ -97,6 +105,10 @@ parameters as the widget (scaled up for readability). 截图由 `preview/preview
 After installation the widget takes over the notification-area clock. Turn
 "Enable the Win Duo Bar widget" off to get the normal clock back.
 安装后时钟由这个 mod 接管；关闭「启用 Win Duo Bar 小组件」即可恢复系统时钟。
+
+Once [PR #6884](https://github.com/ramensoftware/windhawk-mods/pull/6884) is merged,
+the mod will also be installable from the official catalog with one click.
+PR 合并后，也可以从 Windhawk 官方目录一键安装。
 
 ## Settings / 设置
 
