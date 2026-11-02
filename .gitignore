@@ -1,0 +1,11 @@
+*.dll
+*.exe
+*.pdb
+*.obj
+*.tmp
+*.bak*
+.vs/
+__pycache__/
+*.pyc
+preview/*-raw.png
+preview/full.png
