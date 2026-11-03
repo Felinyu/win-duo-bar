@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2
+
+- Read `LOCALE_SSHORTTIME` into an 80-character buffer instead of a 32-character
+  one, so a long custom time format doesn't make the automatic 12/24-hour
+  detection fall back to 24-hour.
+
 ## 1.1.1
 
 - Fix: the "Show the date row" setting is applied on settings changes again
