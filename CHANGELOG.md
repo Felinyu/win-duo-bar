@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.1.3
+
+- Fix the Wi-Fi icon turning dim (offline state) after a live settings change or
+  a mod disable/enable: a forced refresh runs inside the `SendMessage` hook
+  callback used to execute code on the taskbar thread, which is an
+  input-synchronous context where the out-of-process network calls fail. The
+  network is now only read from the 1 s timer in a normal context; forced
+  refreshes apply the last known state and schedule the read for the next tick
+  (with a few retries), so the icon no longer gets stuck on "offline" until
+  Explorer restarts.
+
 ## 1.1.2
 
 - Read `LOCALE_SSHORTTIME` into an 80-character buffer instead of a 32-character
