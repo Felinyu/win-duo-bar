@@ -1,5 +1,48 @@
 # Changelog
 
+## 1.1.0
+
+Addresses the review of the initial submission.
+
+- Remove the tray icon tweaks copied from the "Taskbar tray system icon tweaks"
+  mod: the hide volume/network/battery/microphone/location/Studio Effects/
+  Recall/language bar/language supplementary icons/bell settings, the grayscale
+  battery icon, the "Show desktop" button width override and the time/date
+  hiding (`clockVisibility`) are gone. The mod is now only about the clock
+  widget; the README points to the original mod for hiding the redundant tray
+  icons.
+- Remove the "Enable the Win Duo Bar widget" setting. Disabling the mod is the
+  way to get the native clock back.
+- Multi-monitor: keep one widget per taskbar clock instead of a single global
+  widget. Each `SystemTray.DateTimeIconContent` gets its own canvas, host panel
+  and saved visibility, and settings are applied to the primary and the
+  secondary taskbars. All clocks are restored when the mod unloads.
+- Teardown: the widget cleanup is now unconditional and always runs on the
+  taskbar UI thread (`Wh_ModBeforeUninit` -> `ApplySettings` ->
+  `StopWidgetUi`). `Wh_ModUninit` no longer touches XAML from the engine
+  thread.
+- Network: replace the 2 s out-of-process polling with a
+  `NetworkInformation::NetworkStatusChanged` subscription that only sets a
+  dirty flag, checked by the existing 1 s UI timer. The subscription is
+  revoked on the UI thread during teardown.
+- Localization: use Windhawk's localization syntax. English is the default and
+  all names/descriptions/options have `:zh-CN` variants instead of inline
+  bilingual strings.
+- The widget size now scales the whole widget: ring diameter, stroke widths,
+  bolt, Wi-Fi symbol and digits are proportional to the size.
+- Desktop PCs without a battery no longer show the permanent charging state.
+- 12/24-hour detection now reads `LOCALE_SSHORTTIME` instead of scanning the
+  formatted time for "AM"/"PM".
+- Use `WindhawkUtils::StringSetting` instead of manual
+  `Wh_GetStringSetting`/`Wh_FreeStringSetting` pairs.
+- Code fallback defaults now match the settings block (263° arc, 3.7 DIP ring
+  thickness, 2 DIP Wi-Fi thickness, 75° opening, 7 DIP digits), and stale
+  comments were fixed.
+- Remove dead code: `DateFormatSetting::chinese`, unused XAML tree helpers, the
+  unneeded `UpdateTheme` forward declaration, `BatteryInfo::charging` and
+  `NetworkInfo::bars`.
+- README: embed a screenshot from the repository.
+
 ## 1.0.0
 
 First public release.
