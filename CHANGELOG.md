@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.1.1
+
+- Fix: the "Show the date row" setting is applied on settings changes again
+  (it was only read when the widget was built).
+- Restore the correct visibility when a leftover widget from a previous load is
+  found (`WinDuoBarWidget` canvas): the native clock is treated as visible
+  instead of keeping the leftover collapsed state.
+- Start the widget when Explorer creates (or recreates) the taskbar, so it
+  appears at login even if the optional clock hook isn't available; the clock
+  that triggered the hook is now injected directly instead of only through the
+  scan.
+- 12/24-hour detection ignores quoted literals in `LOCALE_SSHORTTIME` (e.g.
+  French (Canada) `HH 'h' mm`).
+- README: link to the Taskbar tray system icon tweaks mod page instead of a
+  `blob/master` URL; removed an unused include.
+
 ## 1.1.0
 
 Addresses the review of the initial submission.

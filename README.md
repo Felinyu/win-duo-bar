@@ -25,10 +25,10 @@ taskbar.
 
 This mod replaces the clock only. To hide the system battery and network tray
 icons, which the widget makes redundant, use the
-[Taskbar tray system icon tweaks](https://github.com/ramensoftware/windhawk-mods/blob/master/mods/taskbar-tray-system-icon-tweaks.wh.cpp)
+[Taskbar tray system icon tweaks](https://windhawk.net/mods/taskbar-tray-system-icon-tweaks)
 mod instead.
 本模组只替换时钟。如需隐藏系统托盘的电量和网络图标，请使用
-[Taskbar tray system icon tweaks](https://github.com/ramensoftware/windhawk-mods/blob/master/mods/taskbar-tray-system-icon-tweaks.wh.cpp)
+[Taskbar tray system icon tweaks](https://windhawk.net/mods/taskbar-tray-system-icon-tweaks)
 模组。
 
 ## Features / 功能
