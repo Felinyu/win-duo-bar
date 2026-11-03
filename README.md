@@ -36,7 +36,7 @@ mod instead.
 **English**
 
 - **Battery ring** – 263° gauge with round caps and a translucent track. The
-  filled part follows the battery level. Green while charging, red when the
+  filled part follows the battery level. Green while plugged in, red when the
   battery is low (≤20%), yellow in battery saver mode, otherwise the taskbar
   text colour.
 - **Wi-Fi symbol** – two thick rounded arcs plus a solid dot (geometry traced
@@ -59,7 +59,7 @@ mod instead.
 
 **中文**
 
-- **电量圆环**：263° 圆环，圆头、带半透明轨道，填充部分随电量变化。充电绿色、
+- **电量圆环**：263° 圆环，圆头、带半透明轨道，填充部分随电量变化。插电时绿色、
   低电量（≤20%）红色、节电模式黄色，其他情况跟随任务栏文字颜色。
 - **Wi-Fi 图标**：两条粗圆头弧线 + 实心圆点（按原版 09 图标几何描出）；当前连接
   不是无线时显示有线/VPN 图标，断网时变暗。
