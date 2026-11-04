@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.1.4
+
+- Subscribe to `NetworkInformation::NetworkStatusChanged` from the 1 s timer
+  instead of when the widget UI starts, because starting the UI runs inside the
+  input-synchronous `SendMessage` callback where adding the handler can fail;
+  the subscription is retried on every tick until it succeeds.
+- Remove the handler on the Windhawk engine thread during unload, after the
+  taskbar thread stopped the timer, instead of inside the same callback. A
+  failed removal is now logged instead of being swallowed, and waiting for an
+  in-flight handler invocation no longer freezes the taskbar. This prevents a
+  crash if the network changes after the mod was disabled with the handler
+  still registered.
+- Apply the "Show the network icon" setting when the widget is built, so the
+  Wi-Fi symbol no longer flashes when the network icon is disabled.
+- Remove the now-dead "offline" retry in the network refresh path (a failed read
+  returns "unknown" instead of "offline").
+
 ## 1.1.3
 
 - Fix the Wi-Fi icon turning dim (offline state) after a live settings change or
